@@ -106,3 +106,12 @@ CMakeSettings.json
 
 # Python pickle files
 *.pkl
+
+#########
+##| sjlee
+
+# pyenv version file
+.python-version
+
+# clangd files
+compile_commands.json
