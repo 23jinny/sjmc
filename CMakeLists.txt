@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 project(openmc C CXX)
 
+# Create symlink to compilation database for clangd
+if(CMAKE_EXPORT_COMPILE_COMMANDS)
+  execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink
+    ${CMAKE_BINARY_DIR}/compile_commands.json
+    ${CMAKE_SOURCE_DIR}/compile_commands.json
+  )
+endif()
+
 # Set version numbers
 set(OPENMC_VERSION_MAJOR 0)
 set(OPENMC_VERSION_MINOR 15)
